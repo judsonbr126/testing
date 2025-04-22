@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>District Quiz | Hunger Games Tribute</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <style>
+        /* Navbar Styles */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #1a1a1a;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        
+
+        /* Quiz Styling */
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #f39c12;
+        }
+        .quiz-section {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .question {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .answers input {
+            margin-right: 10px;
+        }
+        button {
+            background-color: #f39c12;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        button:hover {
+            background-color: #e67e22;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="index.html">Hunger Games Tribute</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" 
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="review.html">Review</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="ranking.html">Ranking</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="broadcast.html">Broadcast</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="map.html">Panem Map</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="quiz.html">Quiz</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="resume.html">Resume</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<br>
+<br>
+<br>
+    <!-- Quiz Content -->
+    <div class="container">
+        <h1>Which District Are You From?</h1>
+
+        <div class="quiz-section" id="quizSection">
+            <!-- Question 1 -->
+            <div class="question" id="question1">
+                <p>Question 1: What is your primary skill?</p>
+                <div class="answers">
+                    <input type="radio" id="archery" name="skill" value="Archery">
+                    <label for="archery">Archery</label><br>
+                    <input type="radio" id="combat" name="skill" value="Combat">
+                    <label for="combat">Combat</label><br>
+                    <input type="radio" id="survival" name="skill" value="Survival">
+                    <label for="survival">Survival</label><br>
+                    <input type="radio" id="leadership" name="skill" value="Leadership">
+                    <label for="leadership">Leadership</label><br>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question" id="question2" style="display: none;">
+                <p>Question 2: Which attribute best describes you?</p>
+                <div class="answers">
+                    <input type="radio" id="bravery" name="attribute" value="Bravery">
+                    <label for="bravery">Bravery</label><br>
+                    <input type="radio" id="intelligence" name="attribute" value="Intelligence">
+                    <label for="intelligence">Intelligence</label><br>
+                    <input type="radio" id="loyalty" name="attribute" value="Loyalty">
+                    <label for="loyalty">Loyalty</label><br>
+                    <input type="radio" id="creativity" name="attribute" value="Creativity">
+                    <label for="creativity">Creativity</label><br>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question" id="question3" style="display: none;">
+                <p>Question 3: How do you prefer to approach problems?</p>
+                <div class="answers">
+                    <input type="radio" id="direct" name="approach" value="Direct">
+                    <label for="direct">Direct</label><br>
+                    <input type="radio" id="strategic" name="approach" value="Strategic">
+                    <label for="strategic">Strategic</label><br>
+                    <input type="radio" id="creative" name="approach" value="Creative">
+                    <label for="creative">Creative</label><br>
+                    <input type="radio" id="analytical" name="approach" value="Analytical">
+                    <label for="analytical">Analytical</label><br>
+                </div>
+            </div>
+
+            <!-- Buttons -->
+            <div id="buttons">
+                <button onclick="nextQuestion()">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        let currentQuestion = 1;
+        const answers = {};
+    
+        function nextQuestion() {
+            const currentQ = document.getElementById(`question${currentQuestion}`);
+            const nextQ = document.getElementById(`question${currentQuestion + 1}`);
+            const selectedOption = document.querySelector(`#question${currentQuestion} input[type="radio"]:checked`);
+    
+            if (!selectedOption) {
+                alert("Please select an answer before proceeding.");
+                return;
+            }
+    
+            // Store the answer
+            const questionName = selectedOption.name;
+            answers[questionName] = selectedOption.value;
+    
+            // Hide current question and show next
+            currentQ.style.display = "none";
+            if (nextQ) {
+                nextQ.style.display = "block";
+                currentQuestion++;
+            } else {
+                showResult();
+            }
+        }
+    
+        function showResult() {
+            const resultDiv = document.createElement('div');
+            resultDiv.classList.add('quiz-section');
+            resultDiv.style.marginTop = "20px";
+    
+            const { skill, attribute, approach } = answers;
+    
+            let district = "Unknown";
+            // Simple district-matching logic
+            if (skill === "Archery" && attribute === "Bravery") {
+                district = "District 12 - Coal Mining (Home of Katniss)";
+            } else if (skill === "Combat" && approach === "Direct") {
+                district = "District 2 - Military/Defense";
+            } else if (attribute === "Creativity" || approach === "Creative") {
+                district = "District 1 - Luxury Goods";
+            } else if (skill === "Leadership") {
+                district = "District 13 - Rebels/Technology";
+            } else if (approach === "Analytical") {
+                district = "District 3 - Technology";
+            } else if (skill === "Survival") {
+                district = "District 7 - Lumber";
+            } else {
+                district = "District 4 - Fishing";
+            }
+    
+            resultDiv.innerHTML = `
+                <h2>Your District Result:</h2>
+                <p><strong>${district}</strong></p>
+                <p>Based on your skills and personality, you’d thrive in this district of Panem.</p>
+                <button onclick="location.reload()">Retake Quiz</button>
+            `;
+    
+            document.getElementById('quizSection').appendChild(resultDiv);
+            document.getElementById('buttons').style.display = "none";
+        }
+    </script>
+    
+</body>
+</html>

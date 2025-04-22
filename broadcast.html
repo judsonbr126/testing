@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Capitol Broadcast | Hunger Games Fan Site</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">
+        <style>
+            /* Center the video container */
+            .video-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 80vh; /* Adjust height as needed */
+                margin-top: 20px;
+            }
+
+            /* Ensure the iframe takes up more space */
+            .video-container iframe {
+                width: 80%; /* Adjust width as needed */
+                height: 450px; /* Adjust height as needed */
+                max-width: 900px; /* Limits the max width */
+            }
+        </style>
+    </head>
+    <body class="dark-theme">
+        <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html">Hunger Games Tribute</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="review.html">Review</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="ranking.html">Ranking</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="broadcast.html">Broadcast</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="map.html">Panem Map</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="quiz.html">Quiz</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="resume.html">Resume</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <header class="masthead" style="background-image: url('assets/img/katniss_pic.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1 class="display-4 text-warning">Katniss's Broadcast</h1>
+                            <h2 class="subheading text-light">Welcome to District 13, the heart of the Rebellion</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <section class="broadcast-section">
+                        <h3 class="section-heading text-light">Katniss's Broadcast - Exclusive Video</h3>
+                        <p class="text-light">Get a glimpse into the war waging in Panem. In this video, Katniss delivers a powerful speech to all of the districts.</p>
+
+                        <!-- Embedded YouTube Video with center alignment and larger size -->
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/zTIVWEeMmzw" frameborder="0" allowfullscreen></iframe>
+                        </div>
+
+                        <p class="text-light">This broadcast will take you through the heartbreak Katniss witnesses as she becomes the Mockinjay.</p>
+
+                        <section class="section-footer">
+                            <a href="ranking.html" class="btn btn-warning">Book Rankings</a>
+                        </section>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <ul class="list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="#!">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#!">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#!">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; Brianna Judson 2025</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
